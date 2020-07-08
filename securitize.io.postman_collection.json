@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "e962547f-4159-4d55-aa8a-8d83c7361359",
+		"name": "securitize.io",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.etherscan.io/api?module=account&action=balancemulti&address=0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a,0x63a9975ba31b0b9626b34300f7f627147df1f526,0x198ef1ec325a96cc354c7266a038be8b5c558f67&tag=latest&apikey={{APIKEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"etherscan",
+						"io"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "module",
+							"value": "account"
+						},
+						{
+							"key": "action",
+							"value": "balancemulti"
+						},
+						{
+							"key": "address",
+							"value": "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a,0x63a9975ba31b0b9626b34300f7f627147df1f526,0x198ef1ec325a96cc354c7266a038be8b5c558f67"
+						},
+						{
+							"key": "tag",
+							"value": "latest"
+						},
+						{
+							"key": "apikey",
+							"value": "{{APIKEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TransacitonList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.etherscan.io/api?module=account&action=txlist&address=0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a&startblock=0&endblock=99999999&sort=desc&apikey={{APIKEY}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"etherscan",
+						"io"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "module",
+							"value": "account"
+						},
+						{
+							"key": "action",
+							"value": "txlist"
+						},
+						{
+							"key": "address",
+							"value": "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a"
+						},
+						{
+							"key": "startblock",
+							"value": "0"
+						},
+						{
+							"key": "endblock",
+							"value": "99999999"
+						},
+						{
+							"key": "sort",
+							"value": "desc"
+						},
+						{
+							"key": "apikey",
+							"value": "{{APIKEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call local Account 0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:3000/account/0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"account",
+						"0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Account Balance Single",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.etherscan.io/api?module=account&action=balance&address=0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a&tag=latest&apikey={{APIKEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"etherscan",
+						"io"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "module",
+							"value": "account"
+						},
+						{
+							"key": "action",
+							"value": "balance"
+						},
+						{
+							"key": "address",
+							"value": "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a"
+						},
+						{
+							"key": "tag",
+							"value": "latest"
+						},
+						{
+							"key": "apikey",
+							"value": "{{APIKEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Call Balance Account 0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:3000/balance/0x63a9975ba31B0b9626b34300f7f627147dF1F526",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"balance",
+						"0x63a9975ba31B0b9626b34300f7f627147dF1F526"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api.etherscan.io balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.etherscan.io/api?module=account&action=balance&address=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae&tag=latest&apikey={{APIKEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"etherscan",
+						"io"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "module",
+							"value": "account"
+						},
+						{
+							"key": "action",
+							"value": "balance"
+						},
+						{
+							"key": "address",
+							"value": "0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae"
+						},
+						{
+							"key": "tag",
+							"value": "latest"
+						},
+						{
+							"key": "apikey",
+							"value": "{{APIKEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Quotation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/quotation",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quotation"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

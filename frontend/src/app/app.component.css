@@ -1,0 +1,9 @@
+.container {
+  padding: 20px;
+}
+.username,
+.password {
+  display: flex;
+  margin: 20px auto;
+  width: 300px;
+}

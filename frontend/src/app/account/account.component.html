@@ -1,0 +1,80 @@
+<div>
+  <mat-form-field>
+    <input matInput [(ngModel)]="account" placeholder="Ethereum Account" />
+  </mat-form-field>
+</div>
+<div>
+  <button mat-raised-button color="primary" (click)="runAll()">
+    Buscar Cuenta
+  </button>
+</div>
+<mat-label> cuenta: {{ accountshow }}</mat-label> <br />
+<mat-grid-list cols="4" rowHeight="100px" colWidth="50px">
+  <mat-grid-tile colspan="4" rowspan="1">
+    <mat-toolbar color="{{ old ? '' : 'primary' }}">
+      <mat-toolbar-row>
+        <mat-icon> {{ old ? "warning" : "verified" }} </mat-icon>
+        <span>Wallet {{ old ? "is old" : " With activity" }} </span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2" rowspan="3">
+    <div style="background-color: lightgrey; height: 120px; width: 350px;">
+      <div style="height: 30px; float: right;">
+        <span style="">
+          <button *ngIf="!editmode" (click)="changeEditMode()" mat-button>
+            <mat-icon>edit </mat-icon>
+          </button>
+          <button
+            *ngIf="editmode"
+            mat-button
+            (click)="changeEditMode(); onFIATChange()"
+          >
+            <mat-icon>check </mat-icon>
+          </button>
+          <button
+            *ngIf="editmode"
+            mat-button
+            (click)="changeEditMode(); onFIATChange()"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </span>
+      </div>
+      <div style="align-content: center;">
+        <mat-form-field>
+          <input
+            matInput
+            [disabled]="!editmode"
+            [(ngModel)]="ether"
+            placeholder="Ether"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2" rowspan="3">
+    <div style="background-color: lightgrey; height: 120px; width: 350px;">
+      <mat-select
+        [(ngModel)]="Fiat"
+        placeholder="Moneda (fiat) favorita"
+        style="
+          width: 200px;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          margin-left: 20px;
+        "
+        (selectionChange)="onFIATChange()"
+      >
+        <mat-option *ngFor="let noneda of fiat" [value]="noneda.value">
+          {{ noneda.viewValue }}
+        </mat-option>
+      </mat-select>
+      <br />
+      <mat-label
+        >cotizacion en: <b>{{ Fiat }} </b>- Dinero:
+        <b>{{ Valor }} </b></mat-label
+      >
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

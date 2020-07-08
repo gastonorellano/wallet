@@ -1,0 +1,29 @@
+{
+  "limit": "7mb",
+  "services": {
+    "ether": {
+      "name": "api ethereum",
+      "url": "http://api.etherscan.io/api?",
+      "apikey": "NSZCD6S4TKVWRS13PMQFMVTNP6H7NAGHUY",
+      "denominador": 1000000000000000000,
+      "Quotation": { "usd": 238.36, "euro": 208.26 },
+      "getaccountactive": {
+        "module": "account",
+        "action": "txlist",
+        "address": "$account",
+        "startblock": 0,
+        "endblock": 99999999,
+        "sort": "desc"
+      },
+      "getaccountbalance": {
+        "module": "account",
+        "action": "balance",
+        "address": "$account",
+        "tag": "latest"
+      }
+    }
+  },
+  "logfile": "./log/api.log",
+  "tunnels": null,
+  "port": 3000
+}
