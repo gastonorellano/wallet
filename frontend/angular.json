@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "securitize"
+  "defaultProject": "securitize",
+  "cli": {
+    "analytics": "6c71d621-6534-44af-9f5d-2db1e491f59f"
+  }
 }
