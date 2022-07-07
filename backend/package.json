@@ -19,7 +19,7 @@
     "express-joi-validation": "^2.0.0",
     "express-logger": "0.0.3",
     "joi-to-swagger": "^4.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "swagger-jsdoc": "^4.0.0",
     "swagger-ui-express": "^4.1.4"
   },
